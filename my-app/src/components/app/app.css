@@ -1,18 +1,25 @@
 .app {
-    min-height: 100vh;
-    background-color: var(--bg-color);
+  width: 100vw;
+  background-color: var(--main-color);
+  display: flex;
+  /* flex-direction: column; */
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 10px;
+
+
+.content {
+  max-width: calc(100vw - 150px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-main {
-    margin: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+.posters {
+  max-width: calc(100vw - 150px);
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }

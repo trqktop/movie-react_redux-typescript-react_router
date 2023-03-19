@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 9;
+    background-color: var(--main-color);
+    border: 1px rgb(175, 175, 175) solid;
+}

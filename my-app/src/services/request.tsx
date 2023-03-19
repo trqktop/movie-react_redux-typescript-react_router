@@ -15,8 +15,9 @@ const Request = () => {
 
 
     async function _getResource(url: string) {
-        const res = await fetch(url, _header);
-        return _checkResponsive(res, url);
+        const resource = await fetch(url, _header)
+            .then(res => _checkResponsive(res, url))
+        return resource;
     }
 
 
@@ -25,26 +26,25 @@ const Request = () => {
             throw new Error(`Could not fetch ${url}, received ${res.status}`);
         }
         const result = await res.json();
-        return result;
+        return result
     }
 
 
     function getFilms() {
         const url = _baseUrl + 'films'
-        const films = _getResource(url)
-        return films
+        return _getResource(url)
     }
 
 
     function getFilm(id: number) {
         const url = `${_baseUrl}films/${id}`
-        _getResource(url)
+        return _getResource(url)
     }
 
 
     function getPremieres() {
         const url = `${_baseUrl}films/premieres`
-        _getResource(url)
+        return _getResource(url)
     }
 
 

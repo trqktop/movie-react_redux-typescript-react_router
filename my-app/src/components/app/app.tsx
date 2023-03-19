@@ -1,65 +1,54 @@
-import './app.css'
-import { Skeleton } from '@mui/material'
+import { useEffect } from 'react'
+import './App.css'
+import Request from '../../services/request'
+import Banner from '../Banner/Banner'
+import Poster from '../Poster/Poster'
+import Header from '../Header/Header'
+import FilmsCompilation from '../FilmsCompilation/FilmsCompilation'
+import React from 'react'
 
 
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function App() {
+  const [state, setState] = React.useState({
+    windowWidth: window.innerWidth
+  })
+
+
+
+  useEffect(() => {
+    window.onresize = () => {
+      setState(prev => {
+        return {
+          ...prev,
+          windowWidth: window.innerWidth
+        }
+      })
+    }
+    console.log('update')
+  }, [])
+
+  // useEffect(() => {
+  //   const request = Request()
+  // }, [])
+
+
   return (
     <div className='app'>
-      <header></header>
-      <main>
-        <CardSkeleton />
-        <MultiActionAreaCard />
+      <Header />
+      <main className='content'>
+        <Banner />
+        <section className='posters'>
+          <FilmsCompilation />
+          <FilmsCompilation />
+          <FilmsCompilation />
+          <FilmsCompilation />
+          <FilmsCompilation />
+        </section>
       </main>
     </div>
   )
 }
-
-
-
-function MultiActionAreaCard() {
-  return (
-    <div>
-      <Card sx={{ maxWidth: 196, height: 334, background: '#1c1c1c' }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            width='196'
-            height="274"
-            image="https://pic.uma.media/pic/cardimage/e4/cc/e4cc4e6a011c03d542c501741cee7ca5.jpg?size=294&quality=90"
-            alt="green iguana"
-          />
-          <CardContent sx={{ height: 60 }}>
-            <Typography gutterBottom variant="body1" component="div" color="grey.300">
-              <span>fiml</span>
-              <span>fiml</span>
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </div>
-  );
-}
-
-function CardSkeleton() {
-  return (
-    <Skeleton
-      // sx={{ bgcolor: 'grey.1500' }}
-      sx={{ bgcolor: '#1c1c1c' }}
-      variant="rectangular"
-      width={196}
-      height={334}
-      animation="pulse"
-    />
-  )
-}
-
-
 
 
 

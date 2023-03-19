@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 100vw;
 }
 
 code {
@@ -12,8 +13,12 @@ code {
     monospace;
 }
 
-
 :root {
-  --bg-color: rgb(20, 20, 20);
-  --bg-skeleton: #1c1c1c;
+  --main-color: #100e19;
+  --main-button-color: #8d83b9;
+  --swiper-theme-color: var(--main-button-color);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
