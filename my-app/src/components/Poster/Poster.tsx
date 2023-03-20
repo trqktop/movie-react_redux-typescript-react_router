@@ -8,16 +8,18 @@ import { useState } from 'react';
 import './Poster.css'
 
 const Poster = (props: any) => {
-
   const { data, loading, error }: any = { ...props }
+
   const skeleton = loading ? <CardSkeleton /> : null
-  const card = data ? <MultiActionAreaCard /> : null
+  const card = data ? <MultiActionAreaCard data={data} /> : null
   const err = error ? <CardError /> : null
+
+
   return (<div>
     {skeleton}
     {card}
     {err}
-    <CardSkeleton />
+    {/* <CardSkeleton /> */}
   </div>)
 }
 
@@ -36,7 +38,9 @@ function CardError() {
 
 
 
-function MultiActionAreaCard() {
+function MultiActionAreaCard({ ...props }: any) {
+
+
   return (
     <div className='poster'>
       <CardActionArea>
@@ -47,7 +51,7 @@ function MultiActionAreaCard() {
               // sx={{ ":hover": { transform: 'scale(1.5)' }, transition: 'scale 1s linear' }}
               width='196'
               height="274"
-              image="https://pic.uma.media/pic/cardimage/e4/cc/e4cc4e6a011c03d542c501741cee7ca5.jpg?size=294&quality=90"
+              image={props.data.posterUrl}
               alt="green iguana"
             />
           </div>

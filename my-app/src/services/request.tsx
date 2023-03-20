@@ -44,6 +44,12 @@ const Request = () => {
 
     function getPremieres() {
         const url = `${_baseUrl}films/premieres`
+        console.log(url)
+        return _getResource(url)
+    }
+
+    function getPopularFilms() {
+        const url = `${_baseUrl}films/top?type=TOP_100_POPULAR_FILMS&page=1`
         return _getResource(url)
     }
 
@@ -51,7 +57,8 @@ const Request = () => {
     return {
         getFilms,
         getFilm,
-        getPremieres
+        getPremieres,
+        getPopularFilms
     }
 }
 

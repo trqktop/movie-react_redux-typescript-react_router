@@ -1,52 +1,43 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import Request from '../../services/request'
 import Banner from '../Banner/Banner'
 import Poster from '../Poster/Poster'
 import Header from '../Header/Header'
-import FilmsCompilation from '../FilmsCompilation/FilmsCompilation'
-import React from 'react'
+import MainPage from '../Pages/MainPage'
+import { Route, Routes, Link } from 'react-router-dom'
+import PostersCatalog from '../Pages/PostersCatalog'
 
 
+
+
+
+
+
+
+interface IState {
+  data: Array<Object> | null
+  events: {
+    loading: boolean
+    error: boolean
+  }
+}
 
 function App() {
-  const [state, setState] = React.useState({
-    windowWidth: window.innerWidth
-  })
-
-
-
-  useEffect(() => {
-    window.onresize = () => {
-      setState(prev => {
-        return {
-          ...prev,
-          windowWidth: window.innerWidth
-        }
-      })
-    }
-    console.log('update')
-  }, [])
-
-  // useEffect(() => {
-  //   const request = Request()
-  // }, [])
-
 
   return (
+
     <div className='app'>
       <Header />
       <main className='content'>
-        <Banner />
-        <section className='posters'>
-          <FilmsCompilation />
-          <FilmsCompilation />
-          <FilmsCompilation />
-          <FilmsCompilation />
-          <FilmsCompilation />
-        </section>
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='/movie' element={<PostersCatalog />} />
+          <Route path='/serials' element={<PostersCatalog />} />
+          <Route path='/cartoons/:1?' element={<PostersCatalog />} />
+        </Routes>
       </main>
     </div>
+
   )
 }
 

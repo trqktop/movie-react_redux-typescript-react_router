@@ -17,8 +17,11 @@ code {
   --main-color: #100e19;
   --main-button-color: #8d83b9;
   --swiper-theme-color: var(--main-button-color);
+  --font-color: #eff1e6;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
+
+

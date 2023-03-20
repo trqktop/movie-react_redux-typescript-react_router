@@ -5,3 +5,14 @@
 .poster__image {
     transition: transform 200ms ease-out 0ms;
 }
+
+
+.posters {
+    max-width: calc(100vw - 150px);
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 0;
+}
