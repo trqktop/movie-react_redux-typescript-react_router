@@ -1,0 +1,31 @@
+.swiper {
+    max-width: 100%;
+    max-height: 100vh;
+    /* max-height: 725px; */
+}
+
+.swiper-slide {
+    color: white;
+    /* max-height: 725px; */
+}
+
+.swiper__image {
+    width: calc(100vw - 100px);
+    max-height: 100vh;
+    margin: auto;
+    background-color: #1f1b2e;
+}
+
+.swiper-pagination-bullet-active-main {
+    background-color: var(--main-button-color)
+}
+
+.swiper-button-next:after {
+    color: var(--main-button-color)
+}
+
+.swiper-button-prev:after {
+    color: var(--main-button-color)
+}
+
+/* .swiper-button-disabled {} */
