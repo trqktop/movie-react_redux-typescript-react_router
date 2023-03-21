@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext, createContext, } from 'react'
 import './App.css'
 import Banner from '../Banner/Banner'
 import Poster from '../Poster/Poster'
@@ -6,8 +6,9 @@ import Header from '../Header/Header'
 import MainPage from '../Pages/MainPage'
 import { Route, Routes, Link } from 'react-router-dom'
 import PostersCatalog from '../Pages/PostersCatalog'
-
-
+import Request from '../../services/request'
+import { BrowserRouter } from 'react-router-dom';
+const request = Request()
 
 
 
@@ -23,23 +24,27 @@ interface IState {
 }
 
 function App() {
+  const { getFilms,
+    getFilm,
+    getPremieres,
+    getPopularFilms,
+  } = request
 
   return (
-
     <div className='app'>
-      <Header />
-      <main className='content'>
-        <Routes>
-          <Route path='/' element={<MainPage />} />
-          <Route path='/movie' element={<PostersCatalog />} />
-          <Route path='/serials' element={<PostersCatalog />} />
-          <Route path='/cartoons/:1?' element={<PostersCatalog />} />
-        </Routes>
-      </main>
+      <React.StrictMode>
+        {/* <ServiceContext.Provider value={request}> */}
+          {/* <BrowserRouter> */}
+          <Header />
+          <main className='content'>
+          </main>
+          {/* </BrowserRouter> */}
+        {/* </ServiceContext.Provider> */}
+      </React.StrictMode>
     </div>
-
   )
 }
+
 
 
 
