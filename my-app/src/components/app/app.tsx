@@ -32,16 +32,16 @@ function App() {
 
   return (
     <div className='app'>
-      <React.StrictMode>
-        {/* <ServiceContext.Provider value={request}> */}
-          {/* <BrowserRouter> */}
-          <Header />
-          <main className='content'>
-          </main>
-          {/* </BrowserRouter> */}
-        {/* </ServiceContext.Provider> */}
-      </React.StrictMode>
+      {/* <ServiceContext.Provider value={request}> */}
+      {/* <BrowserRouter> */}
+      <Header />
+      <main className='content'>
+        <Banner />
+      </main>
+      {/* </BrowserRouter> */}
+      {/* </ServiceContext.Provider> */}
     </div>
+
   )
 }
 

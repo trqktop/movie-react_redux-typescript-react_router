@@ -50,15 +50,15 @@ const PostersCatalog = (props: any) => {
     //             ))
     //         ))
     // }, [])
-    const skeleton = loading ? <RenderSkeletons /> : null
-    const hasData = (!loading && !error)
+    // const skeleton = loading ? <RenderSkeletons /> : null
+    // const hasData = (!loading && !error)
 
-    const content = hasData ? <RenderItems data={data} /> : null
+    // const content = hasData ? <RenderItems data={data} /> : null
     return (
-        <>
-            {skeleton}
-            {content}
-        </>
+        <div>
+            {/* {skeleton}
+            {content} */}
+        </div>
     )
 }
 
