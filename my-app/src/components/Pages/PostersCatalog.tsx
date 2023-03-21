@@ -24,40 +24,12 @@ const RenderItems = ({ data }: any) => {
 
 const PostersCatalog = (props: any) => {
 
-    const { getData }: any = { ...props }
-    const [state, setState] = useState({
-        data: null,
-        events: {
-            loading: true,
-            error: false
-        }
-    })
-    const { data, events } = { ...state }
-    const { loading, error } = { ...events }
 
-    // useLayoutEffect(() => {
-    //     getData()
-    //         .then((res: any) => (
-    //             setState(state => (
-    //                 {
-    //                     ...state,
-    //                     data: res,
-    //                     events: {
-    //                         loading: false,
-    //                         error: false
-    //                     }
-    //                 }
-    //             ))
-    //         ))
-    // }, [])
-    // const skeleton = loading ? <RenderSkeletons /> : null
-    // const hasData = (!loading && !error)
 
-    // const content = hasData ? <RenderItems data={data} /> : null
+
     return (
         <div>
-            {/* {skeleton}
-            {content} */}
+            <h1>TEXT</h1>
         </div>
     )
 }

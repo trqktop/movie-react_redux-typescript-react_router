@@ -33,12 +33,10 @@ function App() {
   return (
     <div className='app'>
       {/* <ServiceContext.Provider value={request}> */}
-      {/* <BrowserRouter> */}
       <Header />
       <main className='content'>
         <Banner />
       </main>
-      {/* </BrowserRouter> */}
       {/* </ServiceContext.Provider> */}
     </div>
 
